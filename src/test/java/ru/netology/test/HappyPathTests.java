@@ -1,9 +1,8 @@
 package ru.netology.test;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.*;
 import ru.netology.page.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -16,6 +15,16 @@ public class HappyPathTests {
     @BeforeEach
     public void openChrome() {
         open("http://localhost:8080/");
+    }
+
+    @BeforeAll
+    static void setUpAll() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
     }
 
     @DisplayName("Successful purchase with valid debit card.")

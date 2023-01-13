@@ -24,13 +24,13 @@ allure {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
+    testImplementation 'io.rest-assured:rest-assured:4.3.0'
     testImplementation 'mysql:mysql-connector-java:8.0.19'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'com.codeborne:selenide:6.10.3'
     testImplementation 'io.qameta.allure:allure-selenide:2.13.3'
-    testImplementation 'io.rest-assured:rest-assured:4.3.0'
-    testImplementation 'org.postgresql:postgresql:42.2.14'
+    testImplementation 'org.postgresql:postgresql:42.5.1'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
 }
 
