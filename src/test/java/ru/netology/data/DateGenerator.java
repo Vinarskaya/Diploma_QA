@@ -36,28 +36,29 @@ public class DateGenerator {
     }
 
     public static Date getDateWithExpirationMoreThatFiveYears() {
-        int numberOfYeatsAdded = faker.number().numberBetween(5, 99 - actualDate.getYear());
-        Month month = actualDate.getMonth();
-        if (numberOfYeatsAdded == 5) {
-            month = actualDate.plusMonths(faker.number().
-                    numberBetween(1, 12 - actualDate.getMonth().getValue())).getMonth();
-        }
-        LocalDate newDate = LocalDate.of(actualDate.plusYears(numberOfYeatsAdded).getYear(),
-                month, actualDate.getDayOfYear());
-        return new Date(newDate.format(yearTimeFormatter),
-                newDate.format(monthTimeFormatter));
+        int numberOfYeatsAdded = faker.number().numberBetween(6, 99 - Integer.valueOf(actualDate.format(yearTimeFormatter)));
+        return  new Date(actualDate.plusYears(numberOfYeatsAdded).format(yearTimeFormatter),
+                actualDate.format(monthTimeFormatter));
     }
 
     public static Date getDateWithPreviousYears() {
-        int numberOfYeatsTaken = faker.number().numberBetween(1, actualDate.getYear());
+        int numberOfYeatsTaken = faker.number().numberBetween(1, Integer.valueOf(actualDate.format(yearTimeFormatter)));
         return new Date(actualDate.minusYears(numberOfYeatsTaken).format(yearTimeFormatter),
                 actualDate.format(monthTimeFormatter));
     }
 
     public static Date getDateWithPreviousMonths() {
-        int numberOfMonthsTaken = faker.number().numberBetween(1, actualDate.getMonth().getValue() - 1);
-        return new Date(actualDate.format(yearTimeFormatter),
-                actualDate.minusMonths(numberOfMonthsTaken).format(monthTimeFormatter));
+        String month = actualDate.format(monthTimeFormatter);
+        String year;
+        if (month.equals("01")) {
+            month = "12";
+            year = actualDate.minusYears(1).format(yearTimeFormatter);
+        } else {
+            int numberOfMonthsTaken = faker.number().numberBetween(1, actualDate.getMonth().getValue() - 1);
+            month = actualDate.minusMonths(numberOfMonthsTaken).format(monthTimeFormatter);
+            year = actualDate.format(yearTimeFormatter);
+        }
+        return new Date(year, month);
     }
 
     public static Date getDateWithInvalidMonthInfo() {
