@@ -42,13 +42,15 @@
 
 ### Отчёт по итогам тестирования - Allure
 В новой вкладке терминала ввести команду: `gradlew allureServe`
+
 Сгенерированный отчет откроется в браузере автоматически.
+
 <img width="728" alt="Снимок экрана Allure" src="https://user-images.githubusercontent.com/107788282/213795302-baf262ee-4577-4b93-8f03-6600d25e31e2.png">
 
 *При необходимости можно перезагрузить приложение/тесты. Для этого необходимо закрыть ранее открытые вкладки терминала или нажать в них Ctrl+С*
 
 ## Документация
 * План автоматизации тестирования - [Plan.md](https://github.com/Vinarskaya/Diploma_QA/blob/master/documents/Plan.md)
-* Отчётные документы по итогам тестирования - [Issue](), [Report.md](https://github.com/Vinarskaya/Diploma_QA/blob/master/documents/Report.md)
+* Отчётные документы по итогам тестирования - [Issue](https://github.com/Vinarskaya/Diploma_QA/issues), [Report.md](https://github.com/Vinarskaya/Diploma_QA/blob/master/documents/Report.md)
 * Отчётный документ по итогам автоматизации - [Summary.md](https://github.com/Vinarskaya/Diploma_QA/blob/master/documents/Summary.md)
 
