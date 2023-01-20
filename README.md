@@ -33,7 +33,7 @@
 
 3. Само приложение веб-сервиса расположено в файле [aqa-shop.jar](https://github.com/Vinarskaya/Diploma_QA/blob/master/artifacts/aqa-shop.jar) и запускается на порту 8080 одним из следующих способов:
 * в новой вкладке терминала ввести `java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar` - для MySQL;
-* в новой вкладке терминала ввести `java -Dspring.datasource-postgresql.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar` - для PostgreSQL.
+* в новой вкладке терминала ввести `java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar` - для PostgreSQL.
 
 ### Запуск тестов
 В новой вкладке терминала ввести команду в зависимости от запущенной БД:
